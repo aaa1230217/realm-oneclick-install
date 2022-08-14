@@ -22,12 +22,12 @@ installed: /usr/local/etc/realm/config.json
 
 ### 安装
 ```
-bash <(curl -L https://raw.githubusercontent.com/zhouh047/realm-oneclick-install/main/realm.sh) -i
+bash <(curl -L https://raw.githubusercontent.com/aaa1230217/realm-oneclick-install/main/realm.sh) -i
 ```
 
 ### 卸载
 ```
-bash <(curl -L https://raw.githubusercontent.com/zhouh047/realm-oneclick-install/main/realm.sh) -u
+bash <(curl -L https://raw.githubusercontent.com/aaa1230217/realm-oneclick-install/main/realm.sh) -u
 ```
 
 ### 注意
