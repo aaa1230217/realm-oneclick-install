@@ -147,20 +147,21 @@ confirm(){
 }
 
 install_realm(){
-	echo "安装realm 1.4版本..."
+	echo "安装realm zhboner2.+版本..."
 	
-	download  /usr/bin/realm  https://github.com/zhboner/realm/releases/download/v1.4/realm && chmod +x /usr/bin/realm
-	download  /etc/systemd/system/realm.service https://raw.githubusercontent.com/zhouh047/realm-oneclick-install/main/realm.service
-	[ ! -d /usr/local/etc/realm/ ] && mkdir /usr/local/etc/realm/
-	download  /usr/local/etc/realm/config.json https://raw.githubusercontent.com/zhouh047/realm-oneclick-install/main/config.json
+	download  /usr/local/bin/realm  https://github.com/aaa1230217/realm-oneclick-install/releases/download/V2.4.1/realm && chmod +x /usr/local/bin/realm
+	download  /etc/systemd/system/realm.service  https://raw.githubusercontent.com/aaa1230217/realm-oneclick-install/main/realm.service
+	[ ! -d /etc/realm/ ] && mkdir /etc/realm/
+	download  /etc/realm/config.json  https://raw.githubusercontent.com/aaa1230217/realm-oneclick-install/main/config.json
+	download  /root/realm  https://raw.githubusercontent.com/aaa1230217/RealM_Jiaoben_Fork/master/realm.sh && chmod +x /root/realm/realm.sh
 	
 	echo "realm 1.4安装成功..."
-	[ -f /usr/bin/realm ] && echo -e "${green}installed${plain}: /usr/bin/realm"
+	[ -f /usr/local/bin/realm ] && echo -e "${green}installed${plain}: /usr/local/bin/realm"
 	[ -f /etc/systemd/system/realm.service ] && echo -e "${green}installed${plain}: /etc/systemd/system/realm.service"
-	[ -f /usr/local/etc/realm/config.json ] && echo  -e "${green}installed${plain}: /usr/local/etc/realm/config.json"
+	[ -f /etc/realm/config.json ] && echo  -e "${green}installed${plain}: /etc/realm/config.json"
 	
 	echo -e "${yellow}注意：本脚本没有自动配置转发，也没有启动realm。${plain}"
-	echo -e "${yellow}请编辑/usr/local/etc/realm/config.json，添加转发配置。${plain}"
+	echo -e "${yellow}请编辑/etc/realm/config.json，添加转发配置。${plain}"
 	echo -e "${yellow}运行命令 systemctl enable --now realm && systemctl start realm 启动realm${plain}"
 }
 
@@ -168,11 +169,11 @@ uninstall_realm(){
     systemctl stop realm
     systemctl disable realm
 
-	rm -f /usr/bin/realm
+	rm -f /usr/local/bin/realm
 	rm -f /etc/systemd/system/realm.service
-	rm -rf /usr/local/etc/realm/
+	rm -rf /etc/realm/
 	
-	if [ ! -f /usr/bin/realm ] && [ ! -f /etc/systemd/system/realm.service ] && [ ! -f /usr/local/etc/realm/config.json ];then 
+	if [ ! -f /usr/local/bin/realm ] && [ ! -f /etc/systemd/system/realm.service ] && [ ! -f /etc/realm/config.json ];then 
 		echo -e "${green}卸载成功${plain}"
 	else 
 	    echo -e "${red}卸载失败${plain}"
