@@ -153,9 +153,9 @@ install_realm(){
 	download  /etc/systemd/system/realm.service  https://raw.githubusercontent.com/aaa1230217/realm-oneclick-install/main/realm.service
 	[ ! -d /etc/realm/ ] && mkdir /etc/realm/
 	download  /etc/realm/config.json  https://raw.githubusercontent.com/aaa1230217/realm-oneclick-install/main/config.json
-	download  /root/realm  https://raw.githubusercontent.com/aaa1230217/RealM_Jiaoben_Fork/master/realm.sh && chmod +x /root/realm/realm.sh
+	wget  https://raw.githubusercontent.com/aaa1230217/RealM_Jiaoben_Fork/master/realm.sh && chmod +x realm.sh
 	
-	echo "realm 1.4安装成功..."
+	echo "realm zhboner2.+安装成功..."
 	[ -f /usr/local/bin/realm ] && echo -e "${green}installed${plain}: /usr/local/bin/realm"
 	[ -f /etc/systemd/system/realm.service ] && echo -e "${green}installed${plain}: /etc/systemd/system/realm.service"
 	[ -f /etc/realm/config.json ] && echo  -e "${green}installed${plain}: /etc/realm/config.json"
