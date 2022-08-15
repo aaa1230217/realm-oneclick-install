@@ -6,16 +6,16 @@
   "dns": {
     "mode": "ipv4_only",
     "protocol": "tcp_and_udp",
-    "min_ttl": 600,
-    "max_ttl": 3600,
-    "cache_size": 256
+    "min_ttl": 0,
+    "max_ttl": 60,
+    "cache_size": 5
   },
   "network": {
     "no_tcp": false,
     "use_udp": true,
     "zero_copy": true,
     "fast_open": true,
-    "tcp_timeout": 5,
+    "tcp_timeout": 300,
     "udp_timeout": 30,
     "send_proxy": false,
     "send_proxy_version": 2,
