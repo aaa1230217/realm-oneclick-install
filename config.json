@@ -1,22 +1,10 @@
 {
   "log": {
-    "level": "warn",
-    "output": "/var/log/realm.log"
-  },
-  "dns": {
-    "mode": "ipv4_only",
-    "protocol": "tcp_and_udp",
-    "min_ttl": 0,
-    "max_ttl": 60,
-    "cache_size": 5
+    "level": "warn"
   },
   "network": {
     "no_tcp": false,
-    "use_udp": true,
-    "zero_copy": true,
-    "fast_open": true,
-    "tcp_timeout": 300,
-    "udp_timeout": 30,
+    "use_udp": true, 
     "send_proxy": false,
     "send_proxy_version": 2,
     "accept_proxy": false,
